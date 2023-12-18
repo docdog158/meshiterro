@@ -12,9 +12,9 @@ class PostImagesController < ApplicationController
   end
 
   def destroy
-    post_image = PostImage.delete(post_image_params)
+    post_image = PostImage.find(params[:id])
     post_image.delete
-    redirect_to post_images
+    redirect_to "/post_images"
   end
 
   def index
@@ -23,6 +23,7 @@ class PostImagesController < ApplicationController
 
   def show
     @post_image = PostImage.find(params[:id])
+    @post_images = @user.post_images    
   end
 
 
