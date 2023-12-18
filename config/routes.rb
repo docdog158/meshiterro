@@ -8,6 +8,6 @@ Rails.application.routes.draw do
 
   get 'homes/about',to: 'homes#about'
 
-  resources :post_images, only: [:new,:create, :index, :show]
+  resources :post_images, only: [:new,:create, :index, :show,:destroy]
 
 end
